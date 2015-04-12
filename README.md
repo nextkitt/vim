@@ -4,10 +4,14 @@
 
 我的vim配置，对C代码更友好，如果你想使用它，可以通过以下几步：
 
-    mkdir -p ~/tmp/vim-backup
-    cp -rf ~/.vim* ~/tmp/vim-backup
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    curl -s -o ~/.vimrc https://raw.githubusercontent.com/nextkitt/vim/master/vimrc
+    $ mkdir -p ~/tmp/vim-backup
+    $ cp -rf ~/.vim* ~/tmp/vim-backup
+    $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    $ curl -s -o ~/.vimrc https://raw.githubusercontent.com/nextkitt/vim/master/vimrc
 
 打开vim，在命令模式输入`:PluginInstall`安装vimrc中的所有插件。
+
+#### mycscope
+
+`mycscope = cscope + ctags`。
 
