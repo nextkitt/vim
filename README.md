@@ -9,7 +9,7 @@
     $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     $ curl -s -o ~/.vimrc https://raw.githubusercontent.com/nextkitt/vim/master/vimrc
 
-打开vim，在命令模式输入`:PluginInstall`安装vimrc中的所有插件。
+打开vim，在命令模式输入`:PluginInstall`安装vimrc中的所有插件。更多参考[Vundle.vim](https://github.com/gmarik/Vundle.vim)
 
 #### mycscope
 
