@@ -234,8 +234,8 @@ let Tlist_WinWidth=50               "宽度, 与 Tlist_Use_Right_Window 联用
 "let Tlist_WinHeight=10             "高度, 与 Tlist_Use_Horiz_Window 联用
 "let Tlist_Close_On_Select=1        "选择一个 tag后,taglist窗口自动关闭。
 "let Tlist_Auto_Open=1              "vim启动后自动打开tag
-let Tlist_Use_SingleClick=1         "单击tag就跳转, 缺省双击
-"let Tlist_GainFocus_On_ToggleOpen=1 "打开taglist时将光标移动到tag窗口
+"let Tlist_Use_SingleClick=1         "单击tag就跳转, 缺省双击
+let Tlist_GainFocus_On_ToggleOpen=1 "打开taglist时将光标移动到tag窗口
 """ }
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
