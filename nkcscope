@@ -1,0 +1,120 @@
+#!/bin/bash
+
+#
+# - Filename: mycscope.sh 
+# - Description:
+# - Version: 0.0.1
+# - Author: nextkitt@gmail.com
+#
+
+# variables
+## global
+program="$0";
+
+success="\033[32m success \033[0m";
+failed="\033[31m failed \033[0m";
+
+# functions
+## libs
+## basic
+function cs_cscope()
+{
+    cscope -bkq -i cscope.files
+    ctags -R
+    rm -f cscope.files
+}
+## process
+function cs_java()
+{
+    find . -name "*\.java" > cscope.files
+}
+
+function cs_c()
+{
+    find . -name "*\.c" -o -name "*\.h" > cscope.files
+}
+
+function cs_cpp()
+{
+    find . -name "*\.cpp" -o -name "*\.h" > cscope.files
+}
+
+function cs_lua()
+{
+    find . -name "*\.lua" > cscope.files
+}
+
+function cs_python()
+{
+    find . -name "*\.py" -o -name "*.\python" > cscope.files
+}
+
+function cs_all()
+{
+    cs_java;
+    cs_c;
+    cs_cpp;
+    cs_lua;
+    cs_python;
+}
+
+# help
+function usage()
+{
+printf "$program { xxx }
+    java
+    c
+    cpp
+    lua
+    python
+    clean - clean
+    help - help info
+";
+    
+    rc=1;
+    if [[ "$1" =~ [0-9][0-9]* ]]; then
+        rc=$1;
+    fi
+
+    exit $rc;
+}
+
+
+# main
+case $1 in 
+help)
+    usage 0;
+    ;;
+java)
+    cs_java;
+    cs_cscope;
+    ;;
+c)
+    cs_c;
+    cs_cscope;
+    ;;
+cpp)
+    cs_cpp;
+    cs_cscope;
+    ;;
+lua)
+    cs_lua;
+    cs_cscope;
+    ;;
+python)
+    cs_python;
+    cs_cscope;
+    ;;
+all)
+    cs_all;
+    cs_cscope;
+    ;;
+clean)
+    rm -f cscope.in.out  cscope.out  cscope.po.out  tags;
+    exit 0;
+    ;;
+*)
+    usage;
+    ;;
+esac
+
