@@ -15,7 +15,6 @@
 
 `nkcscope = cscope + ctags`。
 
-    nextkitt@localhost:nginx-1.7.10$ nkcscope clean
     nextkitt@localhost:nginx-1.7.10$ ls
     CHANGES    CHANGES.ru LICENSE    README     auto       conf       configure  contrib    html       man        src
     nextkitt@localhost:nginx-1.7.10$ nkcscope 
