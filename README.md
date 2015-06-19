@@ -11,7 +11,7 @@
 
 打开vim，在命令模式输入`:PluginInstall`安装vimrc中的所有插件。更多参考[Vundle.vim](https://github.com/gmarik/Vundle.vim)
 
-#### mycscope
+#### nkcscope
 
-`mycscope = cscope + ctags`。
+`nkcscope = cscope + ctags`。
 
