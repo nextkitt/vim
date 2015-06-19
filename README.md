@@ -15,3 +15,23 @@
 
 `mycscope = cscope + ctags`。
 
+    nextkitt@localhost:nginx-1.7.10$ nkcscope clean
+    nextkitt@localhost:nginx-1.7.10$ ls
+    CHANGES    CHANGES.ru LICENSE    README     auto       conf       configure  contrib    html       man        src
+    nextkitt@localhost:nginx-1.7.10$ nkcscope 
+    nkcscope { xxx }
+        java
+        c
+        cpp
+        lua
+        python
+        clean - clean
+        help - help info
+    nextkitt@localhost:nginx-1.7.10$ nkcscope c
+    nextkitt@localhost:nginx-1.7.10$ ls
+    CHANGES       LICENSE       auto          configure     cscope.in.out cscope.po.out man           tags
+    CHANGES.ru    README        conf          contrib       cscope.out    html          src
+    nextkitt@localhost:nginx-1.7.10$ nkcscope clean
+    nextkitt@localhost:nginx-1.7.10$ ls
+    CHANGES    CHANGES.ru LICENSE    README     auto       conf       configure  contrib    html       man        src
+
