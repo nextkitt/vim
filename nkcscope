@@ -46,7 +46,12 @@ function cs_lua()
 
 function cs_python()
 {
+    # ptags.py之于python相当于ctags之于C、C++
+    # 下载ptags.py http://svn.python.org/projects/python/trunk/Tools/scripts/ptags.py
     find . -name "*\.py" -o -name "*.\python" > cscope.files
+    cscope -bkq -i cscope.files
+    ctags -R
+    find  . -name \*.py -print | xargs ptags.py
 }
 
 function cs_all()
@@ -103,7 +108,6 @@ lua)
     ;;
 python)
     cs_python;
-    cs_cscope;
     ;;
 all)
     cs_all;
