@@ -31,11 +31,11 @@ Plugin 'wincent/command-t'          " Fast file navigation for VIM
 """ Color Schemes [
 Plugin 'jaromero/vim-monokai-refined'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'fatih/molokai'
 """]
 
 """ Go [
 Plugin 'fatih/vim-go'
-"Plugin 'majutsushi/tagbar'          " TODO
 """]
 
 """ Markdown [
@@ -267,7 +267,7 @@ let Tlist_GainFocus_On_ToggleOpen=1 " Jump to taglist window on open.
 """ Yggdroot/indentLine [
 let g:indentLine_color_term = 239
 let g:indentLine_char = '¦'
-let g:indentLine_enabled = 0
+let g:indentLine_enabled = 1
 """]
 
 """ scrooloose/nerdcommenter [ " TODO
@@ -287,7 +287,7 @@ let NERDTreeWinPos = "left"
 """]
 
 """ majutsushi/tagbar [ " TODO
-let g:tagbar_left=1
+let g:tagbar_right=1
 let g:tagbar_width=30
 let g:tagbar_autofocus = 1 
 let g:tagbar_sort = 0 
@@ -333,7 +333,7 @@ let g:CommandTMaxHeight = 15
 """ jaromero/vim-monokai-refined [
 "set t_Co=256
 "syntax on
-colorscheme Monokai-Refined
+"colorscheme Monokai-Refined
 """]
 
 """ altercation/vim-colors-solarized [
@@ -344,6 +344,9 @@ colorscheme Monokai-Refined
 "colorscheme solarized
 """]
 
+""" fatih/molokai[
+"colorscheme molokai
+"""]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " } <= Plugin Config
