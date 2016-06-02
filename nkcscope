@@ -36,7 +36,7 @@ function cs_c()
 
 function cs_cpp()
 {
-    find . -name "*\.cpp" -o -name "*\.h" > cscope.files
+    find . -name "*\.cpp" -o -name "*\.cc" -o -name "*\.cxx" -o -name "*\.hpp" -o -name "*\.h" > cscope.files
 }
 
 function cs_lua()
