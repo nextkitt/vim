@@ -22,7 +22,7 @@ Plugin 'Yggdroot/indentLine'        " Displaying thin vertical lines at each ind
 Plugin 'scrooloose/nerdcommenter'   " Vim plugin for intensely orgasmic commenting
 Plugin 'scrooloose/nerdtree'        " A tree explorer plugin for vim.
 Plugin 'majutsushi/tagbar'          " Tagbar is a plugin for browsing the tags of source code files.
-Plugin 'kien/ctrlp.vim'             " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+"Plugin 'kien/ctrlp.vim'             " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 "Plugin 'tpope/vim-fugitive'         " A Git wrapper so awesome
 "Plugin 'scrooloose/syntastic'       "Syntax checking hacks for vim TODO
 Plugin 'wincent/command-t'          " Fast file navigation for VIM
@@ -253,7 +253,8 @@ set tags=tags                       "
 "set autochdir                       "
 let Tlist_Show_One_File=1           " Show tags for the current buffer only.
 let Tlist_Exit_OnlyWindow=1         " Close Vim if the taglist is the only window.
-let Tlist_Use_Right_Window=1        " Place the taglist window on the right side.
+"let Tlist_Use_Right_Window=1        " Place the taglist window on the right side.
+let Tlist_Use_Left_Window=1        " Place the taglist window on the right side.
 let Tlist_WinWidth=50               " Vertically split taglist window width.
 "let Tlist_Use_Horiz_Window=1        " Use a horizontally split window for the taglist window.
 "let Tlist_WinHeight=10              " Horizontally split taglist window height.
@@ -266,6 +267,7 @@ let Tlist_GainFocus_On_ToggleOpen=1 " Jump to taglist window on open.
 """ Yggdroot/indentLine [
 let g:indentLine_color_term = 239
 let g:indentLine_char = '¦'
+let g:indentLine_enabled = 0
 """]
 
 """ scrooloose/nerdcommenter [ " TODO
@@ -281,7 +283,7 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 " let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
-let NERDTreeWinPos = "right"
+let NERDTreeWinPos = "left"
 """]
 
 """ majutsushi/tagbar [ " TODO
@@ -320,8 +322,8 @@ let g:tagbar_type_go = {
 """]
 
 """ kien/ctrlp.vim [
-set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+"set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
+"let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 """]
 
 """ wincent/command-t[
