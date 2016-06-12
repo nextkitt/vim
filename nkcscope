@@ -54,6 +54,14 @@ function cs_python()
     find  . -name \*.py -print | xargs ptags.py
 }
 
+function cs_go()
+{
+    find . -name "*\.go" > cscope.files
+    cscope -bkq -i cscope.files
+    gotags -R . > tags
+}
+
+
 function cs_all()
 {
     cs_java;
@@ -108,6 +116,9 @@ lua)
     ;;
 python)
     cs_python;
+    ;;
+go)
+    cs_go;
     ;;
 all)
     cs_all;

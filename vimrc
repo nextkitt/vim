@@ -29,7 +29,7 @@ Plugin 'wincent/command-t'          " Fast file navigation for VIM
 
 
 """ Color Schemes [
-Plugin 'jaromero/vim-monokai-refined'
+Plugin 'nextkitt/vim-monokai-refined'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fatih/molokai'
 """]
@@ -330,10 +330,10 @@ let g:tagbar_type_go = {
 let g:CommandTMaxHeight = 15
 """]
 
-""" jaromero/vim-monokai-refined [
+""" nextkitt/vim-monokai-refined [
 "set t_Co=256
 "syntax on
-"colorscheme Monokai-Refined
+colorscheme Monokai-Refined
 """]
 
 """ altercation/vim-colors-solarized [
@@ -344,7 +344,7 @@ let g:CommandTMaxHeight = 15
 "colorscheme solarized
 """]
 
-""" fatih/molokai[
+""" fatih/molokai [
 "colorscheme molokai
 """]
 
