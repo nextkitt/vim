@@ -10,6 +10,7 @@
 # variables
 ## global
 program="$0";
+lang="c";
 
 success="\033[32m success \033[0m";
 failed="\033[31m failed \033[0m";
@@ -44,13 +45,22 @@ function cs_lua()
     find . -name "*\.lua" > cscope.files
 }
 
+function cs_ruby()
+{
+    find . -name "*\.rb" > cscope.files
+}
+
 function cs_python()
 {
     # ptags.py之于python相当于ctags之于C、C++
     # 下载ptags.py http://svn.python.org/projects/python/trunk/Tools/scripts/ptags.py
+    cmd=$(which ptags.py)
+    if [[ "x$cmd" == "x" ]];then
+        cmd=$(which ctags)
+    fi
     find . -name "*\.py" -o -name "*.\python" > cscope.files
     cscope -bkq -i cscope.files
-    ctags -R
+    $cmd -R
     find  . -name \*.py -print | xargs ptags.py
 }
 
@@ -94,6 +104,7 @@ printf "$program { xxx }
 
 
 # main
+lang=$1
 case $1 in 
 help)
     usage 0;
@@ -112,6 +123,10 @@ cpp)
     ;;
 lua)
     cs_lua;
+    cs_cscope;
+    ;;
+ruby)
+    cs_ruby;
     cs_cscope;
     ;;
 python)
