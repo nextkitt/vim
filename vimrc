@@ -24,8 +24,9 @@ Plugin 'scrooloose/nerdtree'        " A tree explorer plugin for vim.
 Plugin 'majutsushi/tagbar'          " Tagbar is a plugin for browsing the tags of source code files.
 "Plugin 'kien/ctrlp.vim'             " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 "Plugin 'tpope/vim-fugitive'         " A Git wrapper so awesome
-"Plugin 'scrooloose/syntastic'       "Syntax checking hacks for vim TODO
+Plugin 'scrooloose/syntastic'       "Syntax checking hacks for vim TODO
 Plugin 'wincent/command-t'          " Fast file navigation for VIM
+Plugin 'Shougo/neocomplete.vim'
 
 
 """ Color Schemes [
@@ -36,13 +37,20 @@ Plugin 'fatih/molokai'
 
 """ Go [
 Plugin 'fatih/vim-go'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'dgryski/vim-godef'
+" Plugin 'Blackrush/vim-gocode'
 """]
 
 """ Markdown [
-Plugin 'plasticboy/vim-markdown'
+"Plugin 'plasticboy/vim-markdown'
 "Plugin 'tpope/vim-markdown'
+Plugin 'junegunn/vim-easy-align'
 """]
 
+""" Scala [
+Plugin 'derekwyatt/vim-scala'
+"""]
 
 "" Refer:
 " - http://vim-scripts.org/vim/scripts.html
@@ -50,6 +58,11 @@ Plugin 'plasticboy/vim-markdown'
 " - https://github.com/humiaozuzu/dot-vimrc
 " - https://github.com/amix/vimrc
 """}
+
+""" template [
+" Plugin 'aperezdc/vim-template' 不可用
+Plugin 'vim-scripts/template.vim'
+"""]
 
 
 
@@ -232,6 +245,8 @@ endif
 
 """ TODO [ " TODO
 " Enable omni completion. (Ctrl-X Ctrl-O)
+" omni completion不需要安装，原本的vim中就有了
+" set ofu=syntaxcomplete#Complete
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
@@ -280,7 +295,7 @@ let NERDCompactSexyComs=1               " Use compact syntax for prettified mult
 
 """ scrooloose/nerdtree [ " TODO
 let NERDChristmasTree=0
-let NERDTreeWinSize=30
+let NERDTreeWinSize=25
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 " let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
@@ -290,7 +305,7 @@ let NERDTreeWinPos = "left"
 
 """ majutsushi/tagbar [ " TODO
 let g:tagbar_right=1
-let g:tagbar_width=30
+let g:tagbar_width=25
 let g:tagbar_autofocus = 1 
 let g:tagbar_sort = 0 
 let g:tagbar_compact = 1 
@@ -332,6 +347,10 @@ let g:tagbar_type_go = {
 let g:CommandTMaxHeight = 15
 """]
 
+""" Shougo/neocomplete.vim [
+let g:neocomplete#enable_at_startup = 1
+"""]
+
 """ nextkitt/vim-monokai-refined [
 "set t_Co=256
 "syntax on
@@ -350,7 +369,16 @@ colorscheme Monokai-Refined
 "colorscheme molokai
 """]
 
+""" fatih/vim-go [
+let g:go_disable_autoinstall = 0
+"""]
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " } <= Plugin Config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Template
+" autocmd bufnewfile *.py call HeaderPython()
+autocmd BufNewFile *.py 0r ~/.vim/template/simple.py
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

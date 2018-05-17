@@ -60,8 +60,8 @@ function cs_python()
     fi
     find . -name "*\.py" -o -name "*.\python" > cscope.files
     cscope -bkq -i cscope.files
-    $cmd -R
-    find  . -name \*.py -print | xargs ptags.py
+    files=$(find  . -name "*.py")
+    ptags.py  $files
 }
 
 function cs_go()
