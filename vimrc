@@ -40,6 +40,8 @@ Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'dgryski/vim-godef'
 " Plugin 'Blackrush/vim-gocode'
+" Plugin 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 """]
 
 """ Markdown [
@@ -64,6 +66,10 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-scripts/template.vim'
 """]
 
+
+""" toml [
+Plugin 'cespare/vim-toml'
+"""]
 
 
 
@@ -267,6 +273,8 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ taglist.vim [
 set tags=tags                       "
+" autocmd FileType c,cpp,cc,cxx,h,hpp setlocal tags+=~/.vim/tags/cpp.tags      " Add by GS 2019-03-26 14:50:28
+" set tags+=~/.vim/tags/cpp.tags      " Add by GS 2019-03-26 14:50:28
 "set autochdir                       "
 let Tlist_Show_One_File=1           " Show tags for the current buffer only.
 let Tlist_Exit_OnlyWindow=1         " Close Vim if the taglist is the only window.
@@ -348,7 +356,7 @@ let g:CommandTMaxHeight = 15
 """]
 
 """ Shougo/neocomplete.vim [
-let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#enable_at_startup = 1
 """]
 
 """ nextkitt/vim-monokai-refined [
@@ -373,6 +381,19 @@ colorscheme Monokai-Refined
 let g:go_disable_autoinstall = 0
 """]
 
+""" Valloric/YouCompleteMe [
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"""]
+
+""" junegunn/vim-easy-align [
+" au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+"""]
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " } <= Plugin Config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -381,4 +402,3 @@ let g:go_disable_autoinstall = 0
 " autocmd bufnewfile *.py call HeaderPython()
 autocmd BufNewFile *.py 0r ~/.vim/template/simple.py
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
